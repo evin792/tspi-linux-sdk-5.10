@@ -8,8 +8,8 @@
  * 文件名：tspi-rk3566-edp-v10.dtsi
  * 描述：
  * 更新:
- * 时间          作者           联系           说明
- * 2023-09-13   吴才成    1378913492@qq.com   v1.0.0
+ * 时间           作者           联系                说明
+ * 2024-09-10   evin792    wang_jin_@outlook.com   v1.0.1
  *********************************************************************/
 
 / {
@@ -23,15 +23,15 @@
 			native-mode = <&edp_timing0>;
 
 			edp_timing0: edp_timing0 {
-				clock-frequency = <150000000>;
+				clock-frequency = <151000000>;
 				hactive = <1920>;
 				vactive = <1080>;
-				hfront-porch = <150>;
-				hsync-len = <5>;
-				hback-porch = <5>;
-				vfront-porch = <3>;
-				vsync-len = <1>;
-				vback-porch = <9>;
+				hfront-porch = <120>;
+				hsync-len = <32>;
+				hback-porch = <180>;
+				vfront-porch = <20>;
+				vsync-len = <8>;
+				vback-porch = <16>;
 				hsync-active = <0>;
 				vsync-active = <0>;
 				de-active = <0>;
@@ -141,18 +141,18 @@
 /*************************************************
 				11.6寸1366x768
 **************************************************/
-&edp_timing0 {
-	clock-frequency = <72300000>;
-	hactive = <1366>;
-	vactive = <768>;
-	hfront-porch = <150>;
-	hsync-len = <5>;
-	hback-porch = <5>;
-	vfront-porch = <3>;
-	vsync-len = <1>;
-	vback-porch = <9>;
-	hsync-active = <0>;
-	vsync-active = <0>;
-	de-active = <0>;
-	pixelclk-active = <0>;
-};
+// &edp_timing0 {
+// 	clock-frequency = <72300000>;
+// 	hactive = <1366>;
+// 	vactive = <768>;
+// 	hfront-porch = <150>;
+// 	hsync-len = <5>;
+// 	hback-porch = <5>;
+// 	vfront-porch = <3>;
+// 	vsync-len = <1>;
+// 	vback-porch = <9>;
+// 	hsync-active = <0>;
+// 	vsync-active = <0>;
+// 	de-active = <0>;
+// 	pixelclk-active = <0>;
+// };
