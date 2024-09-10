@@ -1,10 +1,4 @@
-// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-/*
- * Copyright (c) 2020 Rockchip Electronics Co., Ltd.
- *
- */
-
- /*********************************************************************
+/*********************************************************************
  *           立创开发板不靠卖板赚钱，以培养中国工程师为己任  
  *         泰山派软硬件资料与相关扩展板软硬件资料官网全部开源
  *                      开发板官网：www.lckfb.com            
@@ -14,8 +8,8 @@
  * 文件名：tspi-rk3566-user-v10.dtsi
  * 描述：用户自定义层
  * 更新:
- * 时间          作者           联系           说明
- * 2023-09-13   吴才成    1378913492@qq.com   v1.0.0
+ * 时间          作者               联系             说明
+ * 2024-09-10   evin792    wang_jin_@outlook.com   v1.0.1
  *********************************************************************/
 /dts-v1/;
 
@@ -30,7 +24,7 @@
 #include "tspi-rk3566-core-v10.dtsi"
 
 //【开/关】EDP 显示屏幕配置，用户可以基于此复制自己的屏幕，注意EDP与MIPI屏幕互斥，因为共用了VOP如果需要同显自行修改
-// #include "tspi-rk3566-edp-v10.dtsi"
+#include "tspi-rk3566-edp-v10.dtsi"
 
 //【开/关】mipi 显示屏幕配置，用户可以基于此复制自己的屏幕，注意EDP与MIPI屏幕互斥，因为共用了VOP如果需要同显自行修改
 // #include "tspi-rk3566-dsi-v10.dtsi"
@@ -43,7 +37,7 @@
 
 //【开/关】下方是用户定义层，所有用户修改理论上在此下方修改就好了
 / {
-	model = "lckfb tspi V10 Board";
+	model = "tspi_3566";
 	compatible = "lckfb,tspi-v10", "rockchip,rk3566";
 
 	rk_headset: rk-headset {
@@ -59,22 +53,22 @@
 			gpios = <&gpio1 RK_PB2 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
 			linux,delay-reg = <0>;   		// 延时注册
-			linux,blink-delay-on = <500>; 	// 打开时间
+			linux,blink-delay-on = <0>; 	// 打开时间
 			linux,blink-delay-off = <500>;	// 关闭时间
 		};
 		rgb_led_g: rgb-led-g {
 			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
-			linux,delay-reg = <100>;   		// 延时注册
-			linux,blink-delay-on = <1000>; 
-			linux,blink-delay-off = <1000>;
+			linux,delay-reg = <100>;   		 // 延时注册
+			linux,blink-delay-on = <0>;      // 打开时间
+			linux,blink-delay-off = <1000>;  // 关闭时间
 		};
 		rgb_led_b: rgb-led-b {
 			gpios = <&gpio1 RK_PB0 GPIO_ACTIVE_LOW>;
 			linux,default-trigger = "timer";
-			linux,delay-reg = <100>;  		// 延时注册
-			linux,blink-delay-on = <1500>; 
-			linux,blink-delay-off = <1500>;
+			linux,delay-reg = <100>;  		 // 延时注册
+			linux,blink-delay-on = <1000>;   // 打开时间
+			linux,blink-delay-off = <1000>;  // 关闭时间
 		};
 	};
 
@@ -212,9 +206,9 @@
 	status = "okay";
 };
 
-//pwd 15遥控器
+//pwm15遥控器
 &pwm15 {
-	status = "okay";
+	status = "disable";
 	compatible = "rockchip,remotectl-pwm";
 	remote_pwm_id = <3>;
 	handle_cpu_id = <1>;
@@ -226,8 +220,8 @@
 	//echo 1 > sys/module/rockchip_pwm_remotectl/parameters/code_print
 	//键值可在 include/dt-bindings/input/linux-event-codes.h 中查找
 	ir_key1 {
-		rockchip,usercode = <0xff00>;
-		rockchip,key_table =
+		rockchip,usercode = <0xff00>;  //遥控用户码
+		rockchip,key_table =           //码值对应的功能
 			<0xf2	KEY_MENU>,
 			<0xe9	KEY_BACK>,
 			<0xe3	KEY_ENTER>,
