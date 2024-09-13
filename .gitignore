@@ -6,7 +6,6 @@
 
 ubuntu/ubuntu-base-24.04.1-base-arm64.tar.gz
 ubuntu/ubuntu_rootfs
-ubuntu/.packages/*
 ubuntu/ubuntu_rootfs.img.bak
 ubuntu/ubuntu-rootfs.img.bak
 ubuntu/ubuntu_rootfs.img
