@@ -1,8 +1,8 @@
 
 工具名称                 | 工具用途
 ------------------------|-------------------------------------------
-boot_merger		 | 打包或解包loader工具
-DDR_UserTool		 | DDR用户测试工具
+boot_merger		        | 打包或解包loader工具
+DDR_UserTool		    | DDR用户测试工具
 DriverAssitant          | 驱动安装工具
 EfuseTool               | efuse烧写工具
 FactoryTool             | 量产升级工具
@@ -21,3 +21,4 @@ SDDiskTool              | SD卡启动或升级的镜像制作
 SecureBootTool          | 固件签名工具
 upgrade_tool            | 命令行升级工具
 RKImageMaker            | 命令行打包工具
+KeyboxWriter            | rkp密钥烧录工具
