@@ -11,6 +11,7 @@
 以下步骤针对Ubuntu 22.04编译环境
 
 ```bash
+sudo apt update
 sudo apt install git-lfs
 git clone https://github.com/CmST0us/tspi-linux-sdk.git
 cd tspi-linux-sdk
@@ -40,12 +41,21 @@ g++-multilib unzip device-tree-compiler ncurses-dev python2
 - 添加 `tspi` 立创开发板泰山派 Distroboot启动方法的支持, 参考配置文件 `device/rockchip/.chips/rk3566_rk3568/tspi-rk3566-ubuntu-distroboot_defconfig`
 
 
-## Ubuntu
+## Ubuntu.tar.gz说明
 使用 Ubuntu-22.04
-默认用户名密码: `neons`
+sdk默认用户名密码: `neons`
+
+## rk356x-ubuntu20/2-mini-v202409xx-rootfs
+1、没有安装桌面环境节省资源，可搭配修改bootargs参数实现server版效果
+
+2、默认账号`ubuntu`
+
+3、默认密码`123456`
+
+4、root密码`123456`
 
 ### 串口
-使用波特率 `115200`
+使用波特率 `115200`或者`1500000`
 
 ### ADB
 默认启动 `adb`, 支持USB单线连接到开发板.
