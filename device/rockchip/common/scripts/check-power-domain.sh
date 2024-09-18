@@ -46,7 +46,7 @@ done < $tmp_phandle_file 3<$tmp_io_domain_file
 while read -r regulator_val
 do
 	if echo ${regulator_val} | grep supply &>/dev/null; then
-		echo -e "\n\n\e[1;33m${regulator_val%*=}\e[0m" >> $tmp_final_target
+		echo -e "\n\n\e[1;44m${regulator_val%*=}\e[0m" >> $tmp_final_target
 	else
 		tmp_none_item=${regulator_val##*<}
 		tmp_none_item=${tmp_none_item%%>*}
@@ -54,11 +54,11 @@ do
 	fi
 done < $tmp_regulator_microvolt_file
 
-echo -e "\e[41;1;30m PLEASE CHECK BOARD GPIO POWER DOMAIN CONFIGURATION !!!!!\e[0m"
-echo -e "\e[41;1;30m <<< ESPECIALLY Wi-Fi/Flash/Ethernet IO power domain >>> !!!!!\e[0m"
-echo -e "\e[41;1;30m Check Node [pmu_io_domains] in the file: $RK_KERNEL_DTS \e[0m"
+echo -e "\e[44;1;30m PLEASE CHECK BOARD GPIO POWER DOMAIN CONFIGURATION !!!!!\e[0m"
+echo -e "\e[44;1;30m <<< ESPECIALLY Wi-Fi/Flash/Ethernet IO power domain >>> !!!!!\e[0m"
+echo -e "\e[44;1;30m Check Node [pmu_io_domains] in the file: $RK_KERNEL_DTS \e[0m"
 echo
-echo -e "\e[41;1;30m 请再次确认板级的电源域配置！！！！！！\e[0m"
-echo -e "\e[41;1;30m <<< 特别是Wi-Fi，FLASH，以太网这几路IO电源的配置 >>> ！！！！！\e[0m"
-echo -e "\e[41;1;30m 检查内核文件 $RK_KERNEL_DTS 的节点 [pmu_io_domains] \e[0m"
+echo -e "\e[44;1;30m 请再次确认板级的电源域配置！！！！！！\e[0m"
+echo -e "\e[44;1;30m <<< 特别是Wi-Fi，FLASH，以太网这几路IO电源的配置 >>> !!!!!!\e[0m"
+echo -e "\e[44;1;30m 检查内核文件 $RK_KERNEL_DTS 的节点 [pmu_io_domains] \e[0m"
 cat $tmp_final_target

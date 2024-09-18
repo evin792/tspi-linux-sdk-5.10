@@ -52,7 +52,7 @@ set -a
 
 finish_build()
 {
-	echo -e "\e[35mRunning $(basename "${BASH_SOURCE[1]}") - ${@:-${FUNCNAME[1]}} succeeded.\e[0m"
+	echo -e "\e[32mRunning $(basename "${BASH_SOURCE[1]}") - ${@:-${FUNCNAME[1]}} succeeded.\e[0m"
 	cd "$SDK_DIR"
 }
 
