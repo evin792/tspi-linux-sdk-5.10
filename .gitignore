@@ -21,3 +21,5 @@ device/rockchip/.chip
 device/rockchip/rk3566_rk3568
 device/rockchip/rk3588
 manjaro/manjaro-rootfs.img
+ubuntu/rk356x-ubuntu24-mini-v20240920-rootfs.img
+ubuntu/rk356x-ubuntu24-mini-v20240920-rootfs.tar.gz
