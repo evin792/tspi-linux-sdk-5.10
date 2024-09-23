@@ -54,21 +54,21 @@
 		compatible = "gpio-leds";
 		rgb_led_r: rgb-led-r {
 			gpios = <&gpio1 RK_PB2 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "none";
+			linux,default-trigger = "none"; //timer开启，none关闭
 			linux,delay-reg = <0>;   		// 延时注册
 			linux,blink-delay-on = <0>; 	// 打开时间
 			linux,blink-delay-off = <0>;	// 关闭时间
 		};
 		rgb_led_g: rgb-led-g {
 			gpios = <&gpio1 RK_PB1 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "none";
+			linux,default-trigger = "none";  //timer开启，none关闭
 			linux,delay-reg = <0>;   		 // 延时注册
 			linux,blink-delay-on = <0>;      // 打开时间
 			linux,blink-delay-off = <0>;  // 关闭时间
 		};
 		rgb_led_b: rgb-led-b {
 			gpios = <&gpio1 RK_PB0 GPIO_ACTIVE_LOW>;
-			linux,default-trigger = "timer";
+			linux,default-trigger = "timer"; //timer开启，none关闭
 			linux,delay-reg = <0>;  		 // 延时注册
 			linux,blink-delay-on = <1000>;   // 打开时间
 			linux,blink-delay-off = <1000>;  // 关闭时间
